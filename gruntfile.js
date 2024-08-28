@@ -9,7 +9,9 @@ module.exports = function(grunt) {
             jsmin: 'dist/js/script.min.js',
             sassVariables: 'src/scss/variables.scss',
             additionalJs1: 'src/js/quiz_giga.js',
-            additionalJs2: 'src/js/quiz.js'
+            additionalJs2: 'src/js/quiz.js',
+            html: 'index.html',
+            htmlDist: 'dist/index.html'
         },
 
         // Compilação do Sass
@@ -53,6 +55,19 @@ module.exports = function(grunt) {
             }
         },
 
+        // Minificação do HTML
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'dist/index.html': 'index.html'
+                }
+            }
+        },
+
         // Observação de mudanças
         watch: {
             css: {
@@ -68,6 +83,13 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 }
+            },
+            html: {
+                files: ['index.html'],
+                tasks: ['htmlmin'],
+                options: {
+                    livereload: true
+                }
             }
         }
     });
@@ -76,8 +98,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Registrar as tarefas
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin']);
 };
