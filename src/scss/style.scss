@@ -1,0 +1,220 @@
+// Importando as variáveis
+// src/scss/style.scss
+@use 'sass:math';
+@import 'variaveis';
+@import 'mixins';
+@import 'base';
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: space-around;
+
+img {
+    margin: $margin;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+h1 {
+    color: $primary-color;
+}
+}
+
+header {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 1px;
+    background-color: $secondary-color;
+    color: $branco-color;
+    border-radius: 8px;
+}
+
+#subjectSelection{
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.subjects {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .semana, .Estras {
+        margin: $margin;
+        text-align: center;
+        padding: $padding;
+        width: 300px;
+    }
+}
+
+.subject {
+    background-color: $primary-color;
+    color: $branco-color;
+    padding: $padding;
+    margin: $margin;
+    border-radius: 8px;
+    cursor: pointer;
+    
+
+    h3 {
+        text-align: center;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $azul-tranparente-color;
+        color: $branco-color; // Garantir que a cor do texto também não mude
+        outline: none; // Remove a borda padrão do foco, se necessário
+    }
+}
+
+// grunt watch no terminal 
+
+// estilizando perguntas e alternativas 
+#quiz {
+    padding-top: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.options {
+
+    .option {
+        background-color: $primary-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        color: $branco-alice-color;
+        position: relative;
+        outline: none; /* Remove o contorno padrão ao focar */
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Ajuste a posição vertical do risco */
+            width: 0;
+            height: 4px; /* Espessura do risco */
+            background-color: $branco-alice-color; /* Cor do risco */
+            transition: width 0.9s ease-in-out;
+        }
+
+        &:focus,
+        &.selected {
+            background-color: $azul-tranparente-color;
+
+            &::after {
+                width: 100%; /* O risco aparece completamente ao selecionar */
+            }
+        }
+    }
+}
+
+.buttons, .backButtond {
+    text-align: center;
+    margin-top: $margin;
+
+    .Anterior, .Proxima {
+        margin-left: 11px;
+        margin-right: 10px;
+        margin-top: 25px;
+        background-color: $primary-color; 
+        border-radius: 10px;
+        padding: $padding;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        color: $branco-alice-color;
+        font-weight: bold;
+        font-size: 15px;
+        width: 40%;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($azul-tranparente-color, 10%);
+            }
+    }
+    .backButton {
+        margin-top: 30px;
+        background-color: $button-color; 
+        border-radius: 10px;
+        padding: $padding;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        color: $branco-alice-color;
+        font-weight: bold;
+        font-size: 15px;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($button-hover-color, 10%);
+            }
+    }
+
+}
+
+#results {
+
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center
+    }
+    #score {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #review {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+
+        /* Estilos para respostas corretas */
+        .correct {
+            padding: $padding;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: $verde-tranparente-color; /* Verde com transparência */
+        }
+
+        /* Estilos para respostas incorretas */
+        .incorrect {
+            padding: $padding;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: $vermelho-tranparente-color; /* Vermelho com transparência */
+        }
+    }
+
+}
+
+.reiniciar, .selecao {
+    margin: $margin;
+    @include button-style($button-color, $button-hover-color);
+}
+
+footer {
+    text-align: center;
+    padding: $padding;
+    background-color: $secondary-color;
+    color: white;
+    border-radius: 8px;
+}

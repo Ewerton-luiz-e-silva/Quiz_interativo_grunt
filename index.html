@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Imagem do WhatsApp de 2024-07-02 à(s) 23.16.08_52bccdb3.jpg">
+    <title>Quiz Interativo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="dist/css/style.min.css"> <!-- Inclui o arquivo CSS externo -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+            <div class="titulo">
+                <h1>Quiz Interativo</h1> <img src="./Logo.jpeg"> <!-- Título principal da página -->
+            </div>
+
+        <header>
+            <p id="header-paragraph">Teste seus conhecimentos em diferentes Modalidade!</p> <!-- Parágrafo explicativo opcional -->
+        </header>
+
+        <section id="subjectSelection">
+
+            <h2>Escolha uma Modalidade:</h2> <!-- Título da seção de seleção de matérias -->
+            <div class="subjects">
+
+                <!-- Blocos para selecionar cada matéria, com função onclick para chamar selectSubject() -->
+
+                <div class="Estras"> 
+
+                    <h2>Aprenta sobre GIGA</h2>
+
+                    <div class="subject" onclick="selectSubject(1)">
+                        <h3>GIGA Introduction</h3>
+                    </div>
+    
+                    <div class="subject" onclick="selectSubject(2)">
+                        <h3>GIGA Application</h3>
+                    </div>
+    
+                    <div class="subject" onclick="selectSubject(3)">
+                        <h3>GIGA Efficiency</h3>
+                    </div>
+    
+                    <div class="subject" onclick="selectSubject(4)">
+                        <h3>GIGA Safety & Quality</h3>
+                    </div>
+    
+                    <div class="subject" onclick="selectSubject(5)">
+                        <h3>GIGA Future Trends</h3>
+                    </div>
+                </div>
+
+                <div class="semana">
+
+                    <h2>Da Semana</h2>
+
+                    <div class="subject" onclick="selectSubject(0)">
+                        <h3>Quiz da Semana GIGA-e-TPM</h3>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="quiz">
+
+            <div class="quiz" id="question"></div> <!-- Espaço para exibir a pergunta atual -->
+
+            <div class="options">
+                <!-- Opções de resposta, com função onclick para chamar selectAnswer() -->
+                <div class="option" onclick="selectAnswer(0)" id="option0"></div>
+                <div class="option" onclick="selectAnswer(1)" id="option1"></div>
+                <div class="option" onclick="selectAnswer(2)" id="option2"></div>
+            </div>
+
+            <div class="buttons">
+                <button class="Anterior" id="prevButton" onclick="prevQuestion()">Anterior <i class="bi bi-caret-left-square"></i></button> <!-- Botão para pergunta anterior -->
+                <button class="Proxima" id="nextButton" onclick="nextQuestion()"><i class="bi bi-caret-right-square"></i> Próxima</button> <!-- Botão para próxima pergunta -->
+            </div>
+            
+            <div class="backButtond">
+                <button class="backButton" onclick="returnToSubjectSelection()"><i class="bi bi-card-list"></i> Voltar à seleção</button> <!-- Botão para voltar à seleção de matérias -->
+            </div>
+
+
+        </section>
+
+        <section id="results">
+
+            <h2>Resultado</h2> <!-- Título da seção de resultados -->
+
+            <p id="score"></p> <!-- Espaço para exibir a pontuação do usuário -->
+
+            <div id="review"></div> <!-- Espaço para revisar respostas -->
+
+            <button class="reiniciar" onclick="restartQuiz()"><i class="bi bi-card-checklist"></i> Reiniciar Quiz</button> <!-- Botão para reiniciar o quiz -->
+
+            <button class="selecao" id="subjectSelectionButton" onclick="returnToSubjectSelection()"><i class="bi bi-card-list"></i> Seleção de Modalidade</button> <!-- Botão para voltar à seleção de matérias -->
+
+        </section>
+
+    </div>
+
+        <!-- Footer -->
+        <footer>
+            <div>
+                <h2>Quiz Interativo</h2>
+                <section>
+                    <h4>Esta página está atualmente em desenvolvimento e não foi criada por nenhuma Empresa.</h4>
+                </section>
+                <div>
+                    <span>E-mail: ewerton.luiz_1994@hotmail.com</span></br>
+                    <span>WhatsApp: (19) 99993-4920</span>
+                    <p>
+                        © 2024 Ewerton Luiz e Silva. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Inclusão do jQuery para funcionalidades JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dist/js/script.min.js"></script> <!-- Inclusão do arquivo JavaScript personalizado -->
+    <script src="dist/js/quiz_giga.min.js"></script> <!-- Inclusão do arquivo JavaScript Quiz -->
+
+    <!--<script src="dist/js/quiz.min.js"></script> -->
+</body>
+</html>

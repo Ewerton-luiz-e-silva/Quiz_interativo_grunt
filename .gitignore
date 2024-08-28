@@ -1,0 +1,8 @@
+# Ignorar toda a pasta dist/
+dist/
+
+# Ignorar arquivos .map
+*.map
+
+# Ignorar diretório node_modules se ele existir
+node_modules/
