@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             additionalJs1: 'src/js/quiz_giga.js',
             additionalJs2: 'src/js/quiz.js',
             html: 'index.html',
-            htmlDist: 'dist/index.html'
+            htmlDist: 'dist/index.html',
         },
 
         // Compilação do Sass
@@ -48,9 +48,9 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'dist/js/script.min.js': ['src/js/script.js'],
-                    'dist/js/quiz_giga.min.js': ['src/js/quiz_giga.js'],
-                    'dist/js/quiz.min.js': ['src/js/quiz.js']
+                    '<%= paths.jsmin %>': ['<%= paths.js %>'],
+                    'dist/js/quiz_giga.min.js': ['<%= paths.additionalJs1 %>'],
+                    'dist/js/quiz.min.js': ['<%= paths.additionalJs2 %>']
                 }
             }
         },
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    'dist/index.html': 'index.html'
+                    '<%= paths.htmlDist %>': '<%= paths.html %>'
                 }
             }
         },
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
                 }
             },
             html: {
-                files: ['index.html'],
+                files: ['<%= paths.html %>'],
                 tasks: ['htmlmin'],
                 options: {
                     livereload: true
