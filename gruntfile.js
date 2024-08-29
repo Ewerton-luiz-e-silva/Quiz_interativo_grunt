@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             additionalJs1: 'src/js/quiz_giga.js',
             additionalJs2: 'src/js/quiz.js',
             html: 'index.html',
-            htmlDist: 'dist/index.html',
+            htmlDist: 'dist/index.html'
         },
 
         // Compilação do Sass
