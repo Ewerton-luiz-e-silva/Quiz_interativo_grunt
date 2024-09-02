@@ -1,11 +1,11 @@
 {
-"version": 2,
-"builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "dist/css/style.min.css", "use": "@vercel/static" },
-    { "src": "dist/js/*.min.js", "use": "@vercel/static" }
-],
-"routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-]
+    "version": 2,
+    "builds": [
+        { "src": "index.html", "use": "@vercel/static" },
+        { "src": "dist/css/style.min.css", "use": "@vercel/static" },
+        { "src": "dist/js/*.min.js", "use": "@vercel/static" }
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "/index.html" }
+    ]
 }
